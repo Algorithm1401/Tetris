@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Simple Tetris Program V0.1" />
+      <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="907.0" style="-fx-background-color: grey;">
+         <children>
+            <Label fx:id="timer" contentDisplay="CENTER" layoutX="437.0" layoutY="4.0" prefHeight="43.0" prefWidth="775.0" style="-fx-text-alignment: center;" text="Timer" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="736.0" style="-fx-background-color: grey;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="151.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="275.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="69.0" minWidth="-Infinity" prefWidth="0.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="275.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="144.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="688.0" prefWidth="166.0">
+               <children>
+                  <Pane layoutX="4.0" layoutY="14.0" prefHeight="95.0" prefWidth="155.0">
+                     <children>
+                        <Pane fx:id="player1_next_block_pane" layoutX="5.0" layoutY="-4.0" prefHeight="103.0" prefWidth="145.0">
+                           <children>
+                              <Rectangle fx:id="player1_next_block" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="103.0" layoutX="1.0" stroke="RED" strokeType="INSIDE" strokeWidth="3.0" width="144.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="player1_field" prefHeight="206.0" prefWidth="206.0" style="-fx-background-color: rgb(7,7,7); -fx-border-color: red; -fx-border-width: 3;" GridPane.columnIndex="1" />
+            <Pane fx:id="player2_field" prefHeight="206.0" prefWidth="206.0" style="-fx-background-color: rgb(7,7,7); -fx-border-color: blue; -fx-border-width: 3;" GridPane.columnIndex="3" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Pane layoutX="6.0" layoutY="12.0" prefHeight="103.0" prefWidth="145.0">
+                     <children>
+                        <Rectangle fx:id="player2_next_block" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="103.0" layoutX="1.0" stroke="BLUE" strokeType="INSIDE" strokeWidth="3.0" width="144.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="player1_name_bottom" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Player 1:" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label fx:id="player2_name_bottom" font="$x3" maxWidth="-1.0" text="Player 2:" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
